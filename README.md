@@ -210,7 +210,7 @@ Insert to ReturnStatus:
   -------------------------------------------------------------------------------------------------------------------------------------------
 
 
-9.Retrieve book_title from book table containing history.
+9.Retrieve book_title from book table containing fiction.
 
     select Book_title from books where Category="fiction";
 
@@ -232,6 +232,7 @@ Insert to ReturnStatus:
 
         select a.Customer_name from customer a inner join issuestatus b on a.Customer_id=b.issued_cust  inner join books c on c.ISBN=b.isbn_book where c.Rental_price >25 ;
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
