@@ -8,23 +8,31 @@ It keeps track of all information about books in the library, their cost, status
    
        create database library;
        use library;
-   """ Create following tables: 1. Branch(Branch_no - Set as PRIMARY KEY Manager_Id Branch_address Contact_no)
-       2. Employee(Emp_Id – Set as PRIMARY KEY Emp_name Position Salary Branch_no - Set as FOREIGN KEY and it refer Branch_no in Branch table)
-       3. Books( Books ISBN - Set as PRIMARY KEY Book_title Category Rental_Price Status [Give yes if book available and no if book not available] Author Publisher)
-       4. Customer (Customer Customer_Id - Set as PRIMARY KEY Customer_name Customer_address Reg_date )
-       5. IssueStatus(Issue_Id - Set as PRIMARY KEY Issued_cust – Set as FOREIGN KEY and it refer customer_id in CUSTOMER table Issued_book_name Issue_date Isbn_book – Set as FOREIGN KEY and it should 
-          refer isbn in BOOKS table)
-       6. ReturnStatus( Return_Id - Set as PRIMARY KEY Return_cust Return_book_name Return_date Isbn_book2 - Set as FOREIGN KEY and it should refer isbn in BOOKS table) """
+   """ Create following tables:
+    1. Branch(Branch_no - Set as PRIMARY KEY Manager_Id Branch_address Contact_no)
    
-       create table Branch (Branch_no int primary key,Manager_id int,Branch_address varchar (50),Contact_no varchar(10));
-       create table Employee (Emp_id int primary key,Emp_name varchar(20),Position varchar(25),Salary int,Branch_no int ,foreign key (Branch_no)references Branch(Branch_no));
-       create table Books (ISBN int primary key,Book_title varchar(50),Category varchar (50),Rental_price int,Status enum('Yes','No'),Author varchar (50),Publisher varchar (25));
-       create table Customer (Customer_id int primary key,Customer_name varchar(28),Customer_address varchar (50),Reg_date date );
-       create table Issuestatus (Issue_id int primary key,Issued_cust int ,foreign key (Issued_cust) references Customer(Customer_id), Issued_book_name varchar (50),Issue_date date,
-       Isbn_book int,foreign key(Isbn_book)references Books(ISBN));
-       create table ReturnStatus(Return_id int primary key,Return_cust varchar (50),Return_book_name varchar (50),Return_date date,Isbn_book2 int,foreign key(Isbn_book2) references 
-       Books(ISBN));
+    2. Employee(Emp_Id – Set as PRIMARY KEY Emp_name Position Salary Branch_no - Set as FOREIGN KEY and it refer Branch_no in Branch table)
+       
+   3. Books( Books ISBN - Set as PRIMARY KEY Book_title Category Rental_Price Status [Give yes if book available and no if book not available] Author Publisher)
+
+   4. Customer (Customer Customer_Id - Set as PRIMARY KEY Customer_name Customer_address Reg_date )
+
+   5. IssueStatus(Issue_Id - Set as PRIMARY KEY Issued_cust – Set as FOREIGN KEY and it refer customer_id in CUSTOMER table Issued_book_name Issue_date Isbn_book – Set as FOREIGN KEY and it should 
+          refer isbn in BOOKS table)
+   6. ReturnStatus( Return_Id - Set as PRIMARY KEY Return_cust Return_book_name Return_date Isbn_book2 - Set as FOREIGN KEY and it should refer isbn in BOOKS table) """
+   
+          create table Branch (Branch_no int primary key,Manager_id int,Branch_address varchar (50),Contact_no varchar(10));
+          create table Employee (Emp_id int primary key,Emp_name varchar(20),Position varchar(25),Salary int,Branch_no int ,foreign key (Branch_no)references Branch(Branch_no));
+          create table Books (ISBN int primary key,Book_title varchar(50),Category varchar (50),Rental_price int,Status enum('Yes','No'),Author varchar (50),Publisher varchar (25));
+          create table Customer (Customer_id int primary key,Customer_name varchar(28),Customer_address varchar (50),Reg_date date );
+          create table Issuestatus (Issue_id int primary key,Issued_cust int ,foreign key (Issued_cust) references Customer(Customer_id), Issued_book_name varchar (50),Issue_date date,
+          Isbn_book int,foreign key(Isbn_book)references Books(ISBN));
+          create table ReturnStatus(Return_id int primary key,Return_cust varchar (50),Return_book_name varchar (50),Return_date date,Isbn_book2 int,foreign key(Isbn_book2) references 
+          Books(ISBN));
+
+   
 2.Data Insertion :
+
  Insert to Branch table:
  
     INSERT INTO Branch (Branch_no, Manager_id, Branch_address, Contact_no)VALUES
@@ -42,6 +50,8 @@ It keeps track of all information about books in the library, their cost, status
 
       select * from Branch:
    ![Screenshot (223)](https://github.com/user-attachments/assets/8edadf97-388e-49f6-b4d2-da7d13b541df)
+
+   
 
 
 
@@ -63,6 +73,8 @@ It keeps track of all information about books in the library, their cost, status
     select * from Employee;
  ![Screenshot (224)](https://github.com/user-attachments/assets/a7994226-faa7-482b-bce9-ec83390ce290)
 
+ 
+
 
 Insert to Books:
 
@@ -81,6 +93,8 @@ Insert to Books:
 
     select * from Books;
   ![Screenshot (225)](https://github.com/user-attachments/assets/52daa17e-aeef-4bd4-aa30-f865bf47394d)
+
+  
 
 
 Insert to Customer table:
@@ -101,6 +115,8 @@ Insert to Customer table:
     select * from Customer;
   ![Screenshot (226)](https://github.com/user-attachments/assets/efc7103e-1d8f-45fa-b235-221321b3b865)
 
+  
+
 
 Insert to Issuestatus:
 
@@ -120,6 +136,8 @@ Insert to Issuestatus:
     select * from Issuestatus;
    ![Screenshot (227)](https://github.com/user-attachments/assets/816c10f8-8e6a-4f5f-ba73-714b5fdf822d)
 
+   
+
 
 Insert to ReturnStatus:
 
@@ -138,4 +156,6 @@ Insert to ReturnStatus:
 
     select * from ReturnStatus;
    ![Screenshot (228)](https://github.com/user-attachments/assets/b0f67efc-ff18-4d62-9275-fe9bd5e34c3c)
+
+   
 
