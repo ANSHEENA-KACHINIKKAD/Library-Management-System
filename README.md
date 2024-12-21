@@ -62,9 +62,10 @@ It keeps track of all information about books in the library, their cost, status
 Display table:
 
     select * from Employee;
+ ![Screenshot (224)](https://github.com/user-attachments/assets/a7994226-faa7-482b-bce9-ec83390ce290)
 
 
-Insert to 
+Insert to Books:
 
     INSERT INTO Books (ISBN, Book_title, Category, Rental_price, Status, Author, Publisher)VALUES
     (1, 'The Lord of the Rings', 'Fantasy', 20, 'Yes', 'J.R.R. Tolkien', 'HarperCollins'),
@@ -80,6 +81,7 @@ Insert to
   Display table:
 
     select * from Books;
+  ![Screenshot (225)](https://github.com/user-attachments/assets/52daa17e-aeef-4bd4-aa30-f865bf47394d)
 
 
   Insert to Customer table:
@@ -98,9 +100,10 @@ Insert to
   Display table:
 
     select * from Customer;
+  ![Screenshot (226)](https://github.com/user-attachments/assets/efc7103e-1d8f-45fa-b235-221321b3b865)
 
 
-  Insert to 
+  Insert to Issuestatus:
 
     INSERT INTO Issuestatus (Issue_id, Issued_cust, Issued_book_name, Issue_date, Isbn_book)VALUES
     (1, 1, 'The Lord of the Rings', '2023-11-15', 1),
@@ -116,6 +119,7 @@ Insert to
   Display table:
 
     select * from Issuestatus;
+  ![Screenshot (227)](https://github.com/user-attachments/assets/816c10f8-8e6a-4f5f-ba73-714b5fdf822d)
 
 
 Insert to ReturnStatus:
@@ -134,3 +138,5 @@ Insert to ReturnStatus:
   Display table:
 
     select * from ReturnStatus;
+   ![Screenshot (228)](https://github.com/user-attachments/assets/b0f67efc-ff18-4d62-9275-fe9bd5e34c3c)
+
