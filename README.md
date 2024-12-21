@@ -8,10 +8,14 @@ It keeps track of all information about books in the library, their cost, status
    
        create database library;
        use library;
-   """ Create following tables:
-    1. Branch(Branch_no - Set as PRIMARY KEY Manager_Id Branch_address Contact_no)
+
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
-    2. Employee(Emp_Id – Set as PRIMARY KEY Emp_name Position Salary Branch_no - Set as FOREIGN KEY and it refer Branch_no in Branch table)
+   """ Create following tables:
+   
+   1. Branch(Branch_no - Set as PRIMARY KEY Manager_Id Branch_address Contact_no)
+   
+   2. Employee(Emp_Id – Set as PRIMARY KEY Emp_name Position Salary Branch_no - Set as FOREIGN KEY and it refer Branch_no in Branch table)
        
    3. Books( Books ISBN - Set as PRIMARY KEY Book_title Category Rental_Price Status [Give yes if book available and no if book not available] Author Publisher)
 
@@ -19,7 +23,8 @@ It keeps track of all information about books in the library, their cost, status
 
    5. IssueStatus(Issue_Id - Set as PRIMARY KEY Issued_cust – Set as FOREIGN KEY and it refer customer_id in CUSTOMER table Issued_book_name Issue_date Isbn_book – Set as FOREIGN KEY and it should 
           refer isbn in BOOKS table)
-   6. ReturnStatus( Return_Id - Set as PRIMARY KEY Return_cust Return_book_name Return_date Isbn_book2 - Set as FOREIGN KEY and it should refer isbn in BOOKS table) """
+      
+   7. ReturnStatus( Return_Id - Set as PRIMARY KEY Return_cust Return_book_name Return_date Isbn_book2 - Set as FOREIGN KEY and it should refer isbn in BOOKS table) """
    
           create table Branch (Branch_no int primary key,Manager_id int,Branch_address varchar (50),Contact_no varchar(10));
           create table Employee (Emp_id int primary key,Emp_name varchar(20),Position varchar(25),Salary int,Branch_no int ,foreign key (Branch_no)references Branch(Branch_no));
@@ -29,7 +34,8 @@ It keeps track of all information about books in the library, their cost, status
           Isbn_book int,foreign key(Isbn_book)references Books(ISBN));
           create table ReturnStatus(Return_id int primary key,Return_cust varchar (50),Return_book_name varchar (50),Return_date date,Isbn_book2 int,foreign key(Isbn_book2) references 
           Books(ISBN));
-
+      
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
 ## 2.Data Insertion :
 
@@ -171,60 +177,60 @@ Insert to ReturnStatus:
 
 2. List the employee names and their respective salaries in descending order of salary.
 
-       select Emp_name as Employee_name,Salary from Employee order by Salary desc;
+        select Emp_name as Employee_name,Salary from Employee order by Salary desc;
     -----------------------------------------------------------------------------------------------------------------------------------
 
 3.Retrieve the book titles and the corresponding customers who have issued those books.
 
-     select b.Issued_book_name as Book_title ,c.Customer_name from IssueStatus b inner JOIN Customer c on b.Issued_cust=c.Customer_id;
+        select b.Issued_book_name as Book_title ,c.Customer_name from IssueStatus b inner JOIN Customer c on b.Issued_cust=c.Customer_id;
 
    -------------------------------------------------------------------------------------------------------------------------------------
 
 4.Display the total count of books in each category.
 
-    select Category, count(Category) as Total_books from Books group by Category;
+        select Category, count(Category) as Total_books from Books group by Category;
 
    ------------------------------------------------------------------------------------------------------------------------------------
 
 5. Retrieve the employee names and their positions for the employees whose salaries are above Rs.50,000.
 
-       select Emp_name as Employee_name ,Position from employee where Salary > 50000;
+        select Emp_name as Employee_name ,Position from employee where Salary > 50000;
    -----------------------------------------------------------------------------------------------------------------------------------
 
 6.List the customer names who registered before 2022-01-01 and have not issued any books yet.
 
-    select a.Customer_name as Customer_name from Customer a  inner join issuestatus b on a.Customer_id=b.Issued_cust where Reg_date > 2022-01-01 and b.Issued_book_name is null ;
+        select a.Customer_name as Customer_name from Customer a  inner join issuestatus b on a.Customer_id=b.Issued_cust where Reg_date > 2022-01-01 and b.Issued_book_name is null ;
 
    ---------------------------------------------------------------------------------------------------------------------------------------
 
 7.Display the branch numbers and the total count of employees in each branch.
 
-    select  a.Branch_no as Branch_number ,count(b.Emp_name) as Total_count_employee from branch a inner join employee b on a.Branch_no=b.Branch_no group by b.Branch_no ;
+        select  a.Branch_no as Branch_number ,count(b.Emp_name) as Total_count_employee from branch a inner join employee b on a.Branch_no=b.Branch_no group by b.Branch_no ;
 
    ---------------------------------------------------------------------------------------------------------------------------------------
 
-8.Display the names of customers who have issued books in the month of December 2023. 
+ 8.Display the names of customers who have issued books in the month of December 2023. 
 
-    select a.Customer_name from customer a inner join issuestatus b on a.Customer_id=b.Issued_cust where b.Issue_date between " 2023-12-01 " and "2023-12-30";
+         select a.Customer_name from customer a inner join issuestatus b on a.Customer_id=b.Issued_cust where b.Issue_date between " 2023-12-01 " and "2023-12-30";
 
-  -------------------------------------------------------------------------------------------------------------------------------------------
+   -------------------------------------------------------------------------------------------------------------------------------------------
 
 
 9.Retrieve book_title from book table containing fiction.
 
-    select Book_title from books where Category="fiction";
+         select Book_title from books where Category="fiction";
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 10.Retrieve the branch numbers along with the count of employees for branches having more than 5 employees 
 
-    select b.Branch_no as Branch_number ,count(a.Emp_id) as count_employees from branch b inner join employee a on a.Branch_no=b.Branch_no group by a.Branch_no having count(a.Branch_no)>5;
+         select b.Branch_no as Branch_number ,count(a.Emp_id) as count_employees from branch b inner join employee a on a.Branch_no=b.Branch_no group by a.Branch_no having count(a.Branch_no)>5;
 
   -------------------------------------------------------------------------------------------------------------------------------------------
 
 11.Retrieve the names of employees who manage branches and their respective branch addresses.
 
-    select a.Emp_name as employee_name ,b.Manager_id as Manager_id ,b.Branch_address from employee a inner join branch b on a.Branch_no=b.Branch_no;
+         select a.Emp_name as employee_name ,b.Manager_id as Manager_id ,b.Branch_address from employee a inner join branch b on a.Branch_no=b.Branch_no;
 
  ---------------------------------------------------------------------------------------------------------------------------------------------
 
