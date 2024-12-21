@@ -3,7 +3,7 @@ A simple yet functional Library Management System built using SQL. This project 
 It keeps track of all information about books in the library, their cost, status and total number of books available in the library. 
 
 ## Flow of work:
-1. Database Creation and Table Definitions (SQL):
+## 1. Database Creation and Table Definitions (SQL):
    """ Create database named library ."""
    
        create database library;
@@ -31,7 +31,7 @@ It keeps track of all information about books in the library, their cost, status
           Books(ISBN));
 
    
-2.Data Insertion :
+## 2.Data Insertion :
 
  Insert to Branch table:
  
@@ -52,8 +52,7 @@ It keeps track of all information about books in the library, their cost, status
    ![Screenshot (223)](https://github.com/user-attachments/assets/8edadf97-388e-49f6-b4d2-da7d13b541df)
 
    
-
-
+----------------------------------------------------------------------------------------------------------------------------------
 
  Insert to Employee table:
 
@@ -74,7 +73,7 @@ It keeps track of all information about books in the library, their cost, status
  ![Screenshot (224)](https://github.com/user-attachments/assets/a7994226-faa7-482b-bce9-ec83390ce290)
 
  
-
+-----------------------------------------------------------------------------------------------------------------------------------
 
 Insert to Books:
 
@@ -95,6 +94,7 @@ Insert to Books:
   ![Screenshot (225)](https://github.com/user-attachments/assets/52daa17e-aeef-4bd4-aa30-f865bf47394d)
 
   
+-----------------------------------------------------------------------------------------------------------------------------------
 
 
 Insert to Customer table:
@@ -116,6 +116,7 @@ Insert to Customer table:
   ![Screenshot (226)](https://github.com/user-attachments/assets/efc7103e-1d8f-45fa-b235-221321b3b865)
 
   
+-----------------------------------------------------------------------------------------------------------------------------------
 
 
 Insert to Issuestatus:
@@ -137,6 +138,7 @@ Insert to Issuestatus:
    ![Screenshot (227)](https://github.com/user-attachments/assets/816c10f8-8e6a-4f5f-ba73-714b5fdf822d)
 
    
+-----------------------------------------------------------------------------------------------------------------------------------
 
 
 Insert to ReturnStatus:
