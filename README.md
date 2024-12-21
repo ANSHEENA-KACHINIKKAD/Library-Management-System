@@ -159,5 +159,79 @@ Insert to ReturnStatus:
     select * from ReturnStatus;
    ![Screenshot (228)](https://github.com/user-attachments/assets/b0f67efc-ff18-4d62-9275-fe9bd5e34c3c)
 
-   
+   -----------------------------------------------------------------------------------------------------------------------------------
+
+## 3.SQL Operations
+
+ 1. Retrieve the book title, category, and rental price of all available books.
+    
+        Select Book_title,Category,Rental_price from Books where Status="yes";
+
+    -----------------------------------------------------------------------------------------------------------------------------------
+
+2. List the employee names and their respective salaries in descending order of salary.
+
+       select Emp_name as Employee_name,Salary from Employee order by Salary desc;
+    -----------------------------------------------------------------------------------------------------------------------------------
+
+3.Retrieve the book titles and the corresponding customers who have issued those books.
+
+     select b.Issued_book_name as Book_title ,c.Customer_name from IssueStatus b inner JOIN Customer c on b.Issued_cust=c.Customer_id;
+
+   -------------------------------------------------------------------------------------------------------------------------------------
+
+4.Display the total count of books in each category.
+
+    select Category, count(Category) as Total_books from Books group by Category;
+
+   ------------------------------------------------------------------------------------------------------------------------------------
+
+5. Retrieve the employee names and their positions for the employees whose salaries are above Rs.50,000.
+
+       select Emp_name as Employee_name ,Position from employee where Salary > 50000;
+   -----------------------------------------------------------------------------------------------------------------------------------
+
+6.List the customer names who registered before 2022-01-01 and have not issued any books yet.
+
+    select a.Customer_name as Customer_name from Customer a  inner join issuestatus b on a.Customer_id=b.Issued_cust where Reg_date > 2022-01-01 and b.Issued_book_name is null ;
+
+   ---------------------------------------------------------------------------------------------------------------------------------------
+
+7.Display the branch numbers and the total count of employees in each branch.
+
+    select  a.Branch_no as Branch_number ,count(b.Emp_name) as Total_count_employee from branch a inner join employee b on a.Branch_no=b.Branch_no group by b.Branch_no ;
+
+   ---------------------------------------------------------------------------------------------------------------------------------------
+
+8.Display the names of customers who have issued books in the month of December 2023. 
+
+    select a.Customer_name from customer a inner join issuestatus b on a.Customer_id=b.Issued_cust where b.Issue_date between " 2023-12-01 " and "2023-12-30";
+
+  -------------------------------------------------------------------------------------------------------------------------------------------
+
+
+9.Retrieve book_title from book table containing history.
+
+    select Book_title from books where Category="fiction";
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+10.Retrieve the branch numbers along with the count of employees for branches having more than 5 employees 
+
+    select b.Branch_no as Branch_number ,count(a.Emp_id) as count_employees from branch b inner join employee a on a.Branch_no=b.Branch_no group by a.Branch_no having count(a.Branch_no)>5;
+
+  -------------------------------------------------------------------------------------------------------------------------------------------
+
+11.Retrieve the names of employees who manage branches and their respective branch addresses.
+
+    select a.Emp_name as employee_name ,b.Manager_id as Manager_id ,b.Branch_address from employee a inner join branch b on a.Branch_no=b.Branch_no;
+
+ ---------------------------------------------------------------------------------------------------------------------------------------------
+
+12. Display the names of customers who have issued books with a rental price higher than Rs. 25.
+
+        select a.Customer_name from customer a inner join issuestatus b on a.Customer_id=b.issued_cust  inner join books c on c.ISBN=b.isbn_book where c.Rental_price >25 ;
+
+
+
 
