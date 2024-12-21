@@ -12,8 +12,8 @@ It keeps track of all information about books in the library, their cost, status
        2. Employee(Emp_Id – Set as PRIMARY KEY Emp_name Position Salary Branch_no - Set as FOREIGN KEY and it refer Branch_no in Branch table)
        3. Books( Books ISBN - Set as PRIMARY KEY Book_title Category Rental_Price Status [Give yes if book available and no if book not available] Author Publisher)
        4. Customer (Customer Customer_Id - Set as PRIMARY KEY Customer_name Customer_address Reg_date )
-       5. IssueStatus(Issue_Id - Set as PRIMARY KEY Issued_cust – Set as FOREIGN KEY and it refer customer_id in CUSTOMER table Issued_book_name Issue_date Isbn_book – Set as FOREIGN KEY and it should refer 
-          isbn in BOOKS table)
+       5. IssueStatus(Issue_Id - Set as PRIMARY KEY Issued_cust – Set as FOREIGN KEY and it refer customer_id in CUSTOMER table Issued_book_name Issue_date Isbn_book – Set as FOREIGN KEY and it should 
+          refer isbn in BOOKS table)
        6. ReturnStatus( Return_Id - Set as PRIMARY KEY Return_cust Return_book_name Return_date Isbn_book2 - Set as FOREIGN KEY and it should refer isbn in BOOKS table) """
    
        create table Branch (Branch_no int primary key,Manager_id int,Branch_address varchar (50),Contact_no varchar(10));
@@ -38,11 +38,10 @@ It keeps track of all information about books in the library, their cost, status
     (8, 108, 'Kottayam', '9876543217'),
     (9, 109, 'Alappuzha', '9876543218'),
     (10, 110, 'Idukki', '9876543219');
- Display table:
+   Display table:
 
-    select * from Branch:
-
-  ![Screenshot (223)](https://github.com/user-attachments/assets/8edadf97-388e-49f6-b4d2-da7d13b541df)
+      select * from Branch:
+   ![Screenshot (223)](https://github.com/user-attachments/assets/8edadf97-388e-49f6-b4d2-da7d13b541df)
 
 
 
@@ -59,7 +58,7 @@ It keeps track of all information about books in the library, their cost, status
     (8, 'Henry', 'Manager', 65000, 8),
     (9, 'Isabella', 'Clerk', 28000, 9),
     (10, 'Jack', 'Security Guard', 22000, 10); 
-Display table:
+  Display table:
 
     select * from Employee;
  ![Screenshot (224)](https://github.com/user-attachments/assets/a7994226-faa7-482b-bce9-ec83390ce290)
@@ -84,7 +83,7 @@ Insert to Books:
   ![Screenshot (225)](https://github.com/user-attachments/assets/52daa17e-aeef-4bd4-aa30-f865bf47394d)
 
 
-  Insert to Customer table:
+Insert to Customer table:
 
     INSERT INTO Customer (Customer_id, Customer_name, Customer_address, Reg_date)VALUES
     (1, 'Alice', 'Kochi', '2023-01-01'),
@@ -103,7 +102,7 @@ Insert to Books:
   ![Screenshot (226)](https://github.com/user-attachments/assets/efc7103e-1d8f-45fa-b235-221321b3b865)
 
 
-  Insert to Issuestatus:
+Insert to Issuestatus:
 
     INSERT INTO Issuestatus (Issue_id, Issued_cust, Issued_book_name, Issue_date, Isbn_book)VALUES
     (1, 1, 'The Lord of the Rings', '2023-11-15', 1),
@@ -116,10 +115,10 @@ Insert to Books:
     (8, 8, 'The Hitchhiker\'s Guide to the Galaxy', '2023-12-02', 8),
     (9, 9, 'The Alchemist', '2023-11-22', 9),
     (10, 10, 'The Silent Patient', '2023-12-12', 10);
-  Display table:
+   Display table:
 
     select * from Issuestatus;
-  ![Screenshot (227)](https://github.com/user-attachments/assets/816c10f8-8e6a-4f5f-ba73-714b5fdf822d)
+   ![Screenshot (227)](https://github.com/user-attachments/assets/816c10f8-8e6a-4f5f-ba73-714b5fdf822d)
 
 
 Insert to ReturnStatus:
