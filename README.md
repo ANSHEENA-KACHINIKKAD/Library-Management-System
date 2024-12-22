@@ -240,5 +240,14 @@ Insert to ReturnStatus:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Note:
+ This project serves as a practical exercise in learning and applying fundamental SQL concepts. By working through the database design and query implementation, you can gain valuable experience in:
+
+*   **Database Schema Design:** Understanding how to define tables, columns, and relationships between them to effectively model real-world data.
+*   **SQL Data Manipulation Language (DML):** Mastering common SQL commands such as `SELECT`, `INSERT`, `UPDATE`, and `DELETE` to interact with the database.
+*   **SQL Data Definition Language (DDL):** Learning how to create, modify, and drop tables using commands like `CREATE TABLE`, `ALTER TABLE`, and `DROP TABLE`.
+*   **SQL Data Query Language (DQL):** Writing complex SQL queries to retrieve specific information from the database, including joins, subqueries, and aggregate functions.
+*   **Database Normalization:** Understanding basic principles of database normalization to ensure data integrity and efficiency.
+
 
 
